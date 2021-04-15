@@ -56,7 +56,11 @@ int main()
             cost=cost+price*current_pulls;
             for(number=0; number<current_pulls; number++)
             {
-                rng=rand()%10001+pity+(pity_increase*no_luck);
+                if(pity_activation){
+                rng=rand()%10001+pity+(pity_increase*no_luck);}
+                else{
+                    rng=rand()%10001;
+                }
                 if(rng>ultra_rare)
                 {
                     l_count++;
